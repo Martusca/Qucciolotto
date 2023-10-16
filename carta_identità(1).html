@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <i>Nome</i>
+    <p id="Nome"></p> <br>
+
+    <i>Cognome</i>
+    <p id="cognome"></p> <br>
+
+    <i>Luogo di nascita</i>
+    <p id="luogo_di_nascita"></p> <br>
+
+    <i>Sesso</i>
+    <p id="sesso"></p> <br>
+
+    <i>Statura</i>
+    <p id="statura"></p> <br>
+
+    <i>Cittadinanza</i>
+   <p> <span id="cittadinanza"></span></p> <br>
+   <script>
+    fetch('./dati.json')
+        .then((response) => response.json())  // non rimuovere
+        .then((json) => {
+            console.log(json)
+            document.getElementById("Nome").innerHTML = json.name;
+            document.getElementById("cognome").innerHTML = json.cognome;
+            document.getElementById("luogo_di_nascita").innerHTML = json.luogo_di_nascita;
+            document.getElementById("sesso").innerHTML = json.sesso;
+            document.getElementById("statura").innerHTML = json.statura;
+            document.getElementById("cittadinanza").innerHTML = json.cittadinanza;
+
+
+        });
+
+</script>
+
+</body>
+
+</html>
